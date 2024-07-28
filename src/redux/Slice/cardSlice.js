@@ -7,12 +7,12 @@ const CardSlice = createSlice({
     initialState: [],
     reducers: {
         addItem: (state, action) => {
-            state.fill(action.payload);
+            state.push(action.payload);
 
-        }
-    }
+        },
+    },
 
 });
 
-
+export const { addItem } = CardSlice.actions;
 export default CardSlice.reducer;

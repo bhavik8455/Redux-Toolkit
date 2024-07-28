@@ -10,7 +10,7 @@ const App = () => {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundColor: "#c9e4ed" }}>
 
       <Cart />
       <div className="row">{product.map((product) => < Cards {...product} />)}</div>

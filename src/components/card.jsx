@@ -1,12 +1,15 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { addItem } from "../redux/Slice/cardSlice";
 
 
 
 const Cards = (props) => {
-    console.log(props)
+
+    const dispatch = useDispatch();
+
 
     return (
         <Card style={{ margin: "1rem", border: "2px solid", width: "20rem" }}>
@@ -14,7 +17,8 @@ const Cards = (props) => {
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <h3>{props.price}</h3>
-                <Button variant="primary">Add To Cart</Button>
+                <Button onClick={(e) => dispatch(addItem({ name: props.title, price: props.price }))}
+                    variant="primary">Add To Cart</Button>
             </Card.Body>
         </Card>
 
